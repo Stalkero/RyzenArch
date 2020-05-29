@@ -1,5 +1,5 @@
 # Read me first
-Welcome to my respository about my Arch Setup. To avoid any problems about PC specs i'll provide them below. Feel free to fork or modify
+Welcome to my repository about my Arch Setup. To avoid any problems about PC specs i'll provide them below. Feel free to fork or modify
 
 # PC Specs
 ### CPU : AMD Ryzen 7 2700X
