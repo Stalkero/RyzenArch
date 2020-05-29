@@ -10,5 +10,8 @@ Welcome to my repository about my Arch Setup. To avoid any problems about PC spe
 One for Arch btrfs
 Second for Windows stuff ntfs
 
+systemd-boot Used as bootloader installed on 250 GB ssd 
+
+
 
 
