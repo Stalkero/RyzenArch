@@ -13,5 +13,7 @@ Second for Windows stuff ntfs
 systemd-boot Used as bootloader installed on 250 GB ssd 
 
 
+## Partitioning scheme
+/dev/nvme0n1p1 as /
 
-
+/dev/nvme0n1p2 as /home
