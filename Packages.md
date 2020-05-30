@@ -13,4 +13,4 @@ pacman -Syu base-devel sudo deepin deepin-extra networkmanager nvidia code gpart
 
 ## AUR
 
-yay -S spotify clion teams minecraft-launcher lightdm-webkit-theme-aether powerline-go-git protontricks 
+yay -S spotify clion teams minecraft-launcher lightdm-webkit-theme-aether powerline-go-git protontricks xampp
