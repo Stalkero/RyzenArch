@@ -6,7 +6,7 @@ Welcome to my repository about my Arch Setup. To avoid any problems about PC spe
 ### Motherboard : ASRock B450 Steel Legend ATX
 ### RAM: 32GB 2666MHz CL 15 with XMP
 ### Graphics Card:  MSI GTX 1060 6GB 
-### Storage : 500 GB NVME SSD (Arch,f2fs) 250 GB SSD ( Windows) 1TB HDD (My Stuff) 2TB Divided in half 
+### Storage : 500 GB NVME SSD (Arch,f2fs) 250 GB SSD ( Windows) 1TB HDD (My Stuff,ntfs) 2TB Divided in half 
 One for Arch btrfs
 Second for Windows stuff ntfs
 
