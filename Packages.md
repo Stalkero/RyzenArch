@@ -9,7 +9,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ## Official
 
-pacman -Syu base-devel sudo deepin deepin-kwin deepin-extra networkmanager nvidia code gparted git f2fs-tools pulseeffects pavucontrol lutris steam discord dconf-editor libreoffice-still blueman winetricks vlc p7zip nvidia-settings vim screenfetch chromium android-tools android-udev mtpfs gvfs-mtp mediainfo linux-headers splix
+pacman -Syu base-devel sudo deepin deepin-kwin deepin-extra networkmanager nvidia code gparted git f2fs-tools pulseeffects pavucontrol lutris steam discord dconf-editor libreoffice-still blueman winetricks vlc p7zip nvidia-settings vim screenfetch chromium android-tools android-udev mtpfs gvfs-mtp mediainfo linux-headers cups splix
 
 ## AUR
 
