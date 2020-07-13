@@ -19,3 +19,6 @@ systemd-boot Used as bootloader installed on 250 GB ssd
 /dev/nvme0n1p2 as /home
 
 /dev/sda2 as /home/grzechu/GamesHDD
+
+
+### I no longer use wallpaper.sh but i think it still works :)
