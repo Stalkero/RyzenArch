@@ -11,7 +11,7 @@ Used manual fix from https://github.com/Linux74656/SpaceEngineersLinuxPatches
 
 protontricks 244850 --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
 
-Added <gcServer enabled = "true"/> in the runtime section in /bin64/SpaceEngineers.exe.config
+Added `<gcServer enabled = "true"/>` in the runtime section in /bin64/SpaceEngineers.exe.config
 
 
 Renamed KSH.wmv to KSH.wmv.old in SpaceEngineers/Content/Videos due to the black screen issue
