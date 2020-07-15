@@ -24,4 +24,4 @@ systemd-boot Used as bootloader installed on 250 GB ssd
 ### I no longer use wallpaper.sh but i think it still works :)
 
 # Extras
-I use GloriousEggroll Custom from  [here](https://github.com/GloriousEggroll/proton-ge-custom)
+I use GloriousEggroll Custom Proton from  [here](https://github.com/GloriousEggroll/proton-ge-custom)
