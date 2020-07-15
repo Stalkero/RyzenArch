@@ -4,6 +4,8 @@
 
 If you have already installed Windows just delete the drive_c/windows/Fonts folder in your Wine/Proton Prefix and copy original Fonts folder from your Windows instalation folder to the prefix folder. I did the same and DCS finally loads F-16C.
 
+More detailed tuto [here](https://github.com/TheZoq2/dcs_on_linux)
+
 
 #### Space Engineers
 
