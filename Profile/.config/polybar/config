@@ -1,0 +1,245 @@
+# Colors
+[colors]
+bg = #40000000
+bg_focused = #20333333
+
+fg = #ffcccccc
+fg_active = #ffffffff
+fg_inactive = #ff444444
+fg_urgent = #ffff0077
+
+fg_s1 = #ff02ee02
+fg_s2 = #ffeeee02
+fg_s3 = #ffee0202
+
+
+
+# Top bar
+[bar/top]
+width = 100%
+height = 27
+fixed-center = true
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+
+font-0 = Arial:pixelsize=9:weight=bold;0
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-3 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-4 = "Arial:size=10;0"
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 5
+module-margin-right = 5
+
+modules-left = workspaces
+modules-center = title
+modules-right = volume eth_ip eth_usage clock
+
+# Bottom bar
+[bar/bottom]
+width = 100%
+height = 27
+fixed-center = true
+bottom = true
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+
+
+font-0 = fixed:pixelsize=9:weight=bold;0
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-3 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-4 = "Arial:size=10;0"
+
+padding-left = 5
+padding-right = 5
+module-margin-left = 5
+module-margin-right = 5
+
+modules-left = memory cpu
+modules-center = filesystem
+
+tray-position = right
+
+#
+# Top bar modules
+#
+
+# Workspaces
+[module/workspaces]
+type = internal/i3
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+index-sort = true
+enable-click = true
+
+ws-icon-default=
+
+ws-icon-0 = 1;
+ws-icon-1 = 2; / 
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5= 6; 
+ws-icon-6= 7;
+
+
+
+format = <label-state> <label-mode>
+
+label-focused = %icon% %name%
+label-focused-foreground = ${colors.fg_active}
+label-focused-background = ${colors.bg_focused}
+label-focused-padding = 3
+
+label-unfocused = %icon% %name%
+label-unfocused-foreground = ${colors.fg}
+label-unfocused-padding = 3
+
+label-visible = %icon% %name%
+label-visible-padding = 3
+
+label-urgent = %icon% %name%
+label-urgent-foreground = ${colors.fg_urgent}
+label-urgent-background = ${colors.bg}
+label-urgent-padding = 3
+
+# Current window title
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${colors.bg}
+format-foreground = ${colors.fg}
+format-padding = 4
+
+label = %title%
+label-maxlen = 70
+
+label-empty = Empty
+label-empty-foreground = ${colors.fg}
+
+# Volume
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+
+label-volume = %percentage%%
+label-volume-foreground = #ff
+
+format-muted-foreground = ${colors.fg}
+label-muted =   %percentage%%
+label-muted-foreground = ${colors.fg}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.fg}
+
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.fg_s3}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.fg}
+animation-packetloss-framerate = 500
+
+[module/eth_ip]
+type = internal/network
+interface = enp9s0
+interval = 2.0
+
+label-connected = "  %local_ip%"
+label-disconndcted = 
+
+[module/eth_usage]
+type = internal/network
+interface = enp9s0
+interval = 1.0
+
+label-connected = " %upspeed%  %downspeed%"
+label-disconndcted = 
+
+
+# Date & time
+[module/clock]
+type = internal/date
+interval = 1
+format-padding = 5
+format-background = ${colors.bg}
+format-foreground = ${colors.fg}
+date =  %Y-%m-%d     %H:%M:%S
+
+#
+# Bottom modules
+#
+
+
+# CPU
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format = <label> <ramp-coreload>
+
+label = 
+label-foreground = ${colors.fg}
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.fg_s1}
+ramp-coreload-0-font = 5
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.fg_s1}
+ramp-coreload-1-font = 5
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.fg_s1}
+ramp-coreload-2-font = 5
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.fg_s2}
+ramp-coreload-3-font = 5
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.fg_s2}
+ramp-coreload-4-font = 5
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.fg_s2}
+ramp-coreload-5-font = 5
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.fg_s3}
+ramp-coreload-6-font = 5
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.fg_s3}
+ramp-coreload-7-font = 5
+
+[module/memory]
+type = internal/memory
+interval = 1
+format-prefix = "RAM "
+label = %percentage_used%%
+
+
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1= /home
+mount-2= /home/grzechu/GamesHDD
+
+label-mounted = %{F#6688aa}%mountpoint%%{F-}: %free%
