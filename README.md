@@ -25,3 +25,5 @@ systemd-boot Used as bootloader installed on 250 GB ssd
 
 # Extras
 I use GloriousEggroll Custom Proton from  [here](https://github.com/GloriousEggroll/proton-ge-custom)
+ 
+ Check out polybar config from this [dude] (https://github.com/Batoshu/dots/blob/master/polybar/config)
