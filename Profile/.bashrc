@@ -6,6 +6,7 @@ alias bash-config="code ~/.bashrc"
 alias clear-cache="sudo rm -rf /var/cache;rm -rf ~/.cache;echo;echo;echo;echo;echo Cleared cache"
 alias clear-vk-cache="rm -rf ~/.local/share/vulkan/implicit_layer.d"
 alias ds4-battery="cat /sys/class/power_supply/sony_controller_battery_*/capacity"
+alias ds4-touchpad="xinput set-prop 'Wireless Controller Touchpad' 'Device Enabled' 0"
 
 function _update_ps1() {
     PS1="$($GOPATH/bin/powerline-go -error $?)"
