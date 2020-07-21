@@ -19,3 +19,9 @@ Added `<gcServer enabled = "true"/>` in the runtime section in /bin64/SpaceEngin
 Renamed KSH.wmv to KSH.wmv.old in SpaceEngineers/Content/Videos due to the black screen issue
 
 Copied original Windows fonts
+
+
+#### Far Cry 5
+
+Used Proton 4.11-13 because Uplay not shows up when using 5.0
+Move dinput8.dll with  CRC SHA256 `567f08044e2c31375a31cd66016cb8f9e3226f3640c9ab82f9f4fe79fc09fc6a` to .../steamapps/compatdata/552520/pfx/drive_c/windows/system32
