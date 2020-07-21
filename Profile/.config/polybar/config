@@ -62,7 +62,7 @@ padding-right = 5
 module-margin-left = 5
 module-margin-right = 5
 
-modules-left = memory cpu
+modules-left = memory cpu tempCPU tempSSD
 modules-center = filesystem
 
 tray-position = right
@@ -109,6 +109,10 @@ label-urgent = %icon% %name%
 label-urgent-foreground = ${colors.fg_urgent}
 label-urgent-background = ${colors.bg}
 label-urgent-padding = 3
+
+
+
+
 
 # Current window title
 [module/title]
@@ -190,6 +194,31 @@ date =  %Y-%m-%d     %H:%M:%S
 # Bottom modules
 #
 
+#Temps
+[module/tempCPU]
+type = internal/temperature
+interval = 2
+
+thermal-zone = 0
+warn-temperature = 70
+
+units = true
+format = <label>
+label = CPU %temperature-c%
+hwmon-path = /sys/class/hwmon/hwmon1/temp2_input
+
+[module/tempSSD]
+type = internal/temperature
+interval = 2
+
+thermal-zone = 0
+warn-temperature = 70
+
+units = true
+format = <label>
+label = SSD %temperature-c%
+hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
+
 
 # CPU
 [module/cpu]
@@ -243,3 +272,5 @@ mount-1= /home
 mount-2= /home/grzechu/GamesHDD
 
 label-mounted = %{F#6688aa}%mountpoint%%{F-}: %free%
+
+
