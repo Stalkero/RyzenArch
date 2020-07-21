@@ -210,8 +210,12 @@ for_window [class="^.*"] border pixel 0
 #Games workspace
 for_window [class="gta5.exe"]	move to workspace $ws1
 for_window [class="steam_app_242760"]	move to workspace $ws1 #The Forest
+for_window [class="steam_app_1190460"]	move to workspace $ws1 #Death Stranding
+for_window [class="steam_app_552520"]	move to workspace $ws1 #farcry5
 for_window [class="hl2_linux"]	move to workspace $ws1
 for_window [class="minecraft-launcher"]	move to workspace $ws1
+for_window [class="FarCry5.exe"]	move to workspace $ws1 #farcry5
+for_window [class="farcry5.exe"]	move to workspace $ws1 #farcry5
 
 
 
@@ -231,6 +235,9 @@ for_window [class="Pulseeffects"]	move to workspace $ws4
 for_window [class="Steam"]		move to workspace $ws5
 for_window [class="lutris"]		move to workspace $ws5
 for_window [class="socialclubhelper.exe"]		move to workspace $ws5
+for_window [class="upc.exe"]	move to workspace $ws5 #farcry5
+for_window [class="UbisoftGameLauncher.exe"]	move to workspace $ws5 #farcry5
+for_window [class="ubisoftgamelauncher.exe"]	move to workspace $ws5 #farcry5
 
 for_window [class="konsole"]		move to workspace $ws6
 
