@@ -1,11 +1,11 @@
 #!/bin/bash
 yay -S \
-davinci-resolve  \
+davinci-resolve \
 droidcam \
 freedownloadmanager \
 jmtpfs \
 lightdm-webkit-theme-aether \
-minecraft-launcher \ 
+minecraft-launcher \
 polybar \
 protontricks-git \
 spotify \
