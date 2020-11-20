@@ -29,4 +29,4 @@ I use GloriousEggroll Custom Proton from  [here](https://github.com/GloriousEggr
  Check out polybar config from this   [dude](https://github.com/Batoshu/dots/blob/master/polybar/config)
 
 
- Never gonna give you up
+
