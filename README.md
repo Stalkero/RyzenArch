@@ -5,7 +5,7 @@ Welcome to my repository about my Arch Setup. To avoid any problems about PC spe
 I use GloriousEggroll Custom Proton from  [here](https://github.com/GloriousEggroll/proton-ge-custom)
 Check out polybar config from this   [dude](https://github.com/Batoshu/dots/blob/master/polybar/config)
 
-#PulseAudio Output lantency 
+# PulseAudio Output lantency 
 Pipeline Input and Output
 Buffer: 7000
 Lantency: 1000
