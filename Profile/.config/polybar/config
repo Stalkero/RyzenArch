@@ -3,7 +3,7 @@
 bg = #40000000
 bg_focused = #20333333
 
-fg = #ffcccccc
+fg = #ffffffff
 fg_active = #ffffffff
 fg_inactive = #ff444444
 fg_urgent = #ffff0077
@@ -17,32 +17,32 @@ fg_s3 = #ffee0202
 # Top bar
 [bar/top]
 width = 100%
-height = 27
+height = 25
 fixed-center = true
 
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-
-font-0 = Arial:pixelsize=9:weight=bold;0
+font-0 = Arial:pixelsize=10;
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-3 = "Font Awesome 5 Brands:pixelsize=10;1"
-font-4 = "Arial:size=10;0"
 
 padding-left = 0
 padding-right = 0
-module-margin-left = 5
-module-margin-right = 5
+module-margin-left = 1
+module-margin-right = 1
 
-modules-left = workspaces
-modules-center = title
-modules-right = volume eth_ip eth_usage clock
+modules-left = workspaces cpu tempCPU  gpuUsage gpuTemp memory eth_usage 
+modules-center = title 
+modules-right= ds4 volume clock
+tray-position = right
+
 
 # Bottom bar
 [bar/bottom]
 width = 100%
-height = 27
+height = 25
 fixed-center = true
 bottom = true
 
@@ -50,22 +50,15 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 
 
+padding-left = 1
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
 
-font-0 = fixed:pixelsize=9:weight=bold;0
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-3 = "Font Awesome 5 Brands:pixelsize=10;1"
-font-4 = "Arial:size=10;0"
-
-padding-left = 5
-padding-right = 5
-module-margin-left = 5
-module-margin-right = 5
-
-modules-left = memory cpu tempCPU tempSSD
+modules-left = 
 modules-center = filesystem
 
-tray-position = right
+
 
 #
 # Top bar modules
@@ -92,12 +85,13 @@ ws-icon-6= 7;
 
 
 format = <label-state> <label-mode>
+format-underline = 
+
 
 label-focused = %icon% %name%
 label-focused-foreground = ${colors.fg_active}
 label-focused-background = ${colors.bg_focused}
 label-focused-padding = 3
-
 label-unfocused = %icon% %name%
 label-unfocused-foreground = ${colors.fg}
 label-unfocused-padding = 3
@@ -123,7 +117,8 @@ format-background = ${colors.bg}
 format-foreground = ${colors.fg}
 format-padding = 4
 
-label = %title%
+label = %{T1}%title%
+fixed-center = true
 label-maxlen = 70
 
 label-empty = Empty
@@ -133,9 +128,9 @@ label-empty-foreground = ${colors.fg}
 [module/volume]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume> <label-volume>%{O-15}
 
-label-volume = %percentage%%
+label-volume = %{T4}%percentage%%
 label-volume-foreground = #ff
 
 format-muted-foreground = ${colors.fg}
@@ -146,23 +141,6 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.fg}
-
-
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
-label-disconnected =    not connected
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-
-animation-packetloss-0 = 
-animation-packetloss-0-foreground = ${colors.fg_s3}
-animation-packetloss-1 = 
-animation-packetloss-1-foreground = ${colors.fg}
-animation-packetloss-framerate = 500
 
 [module/eth_ip]
 type = internal/network
@@ -177,7 +155,7 @@ type = internal/network
 interface = enp9s0
 interval = 1.0
 
-label-connected = " %upspeed%  %downspeed%"
+label-connected = "%{O-6} %upspeed%  %downspeed%"
 label-disconndcted = 
 
 
@@ -188,7 +166,7 @@ interval = 1
 format-padding = 5
 format-background = ${colors.bg}
 format-foreground = ${colors.fg}
-date =  %Y-%m-%d     %H:%M:%S
+date =  %Y-%m-%d   %H:%M:%S
 
 #
 # Bottom modules
@@ -201,11 +179,10 @@ interval = 2
 
 thermal-zone = 0
 warn-temperature = 70
-
-units = true
-format = <label>
-label = CPU %temperature-c%
+units = false
 hwmon-path = /sys/class/hwmon/hwmon1/temp2_input
+label = %{O-6}/%temperature-c%
+
 
 [module/tempSSD]
 type = internal/temperature
@@ -223,43 +200,15 @@ hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
 # CPU
 [module/cpu]
 type = internal/cpu
-interval = 1
+interval = 0.5
 
-format = <label> <ramp-coreload>
+label = %{O20} %percentage%
 
-label = 
-label-foreground = ${colors.fg}
-
-ramp-coreload-0 = ▁
-ramp-coreload-0-foreground = ${colors.fg_s1}
-ramp-coreload-0-font = 5
-ramp-coreload-1 = ▂
-ramp-coreload-1-foreground = ${colors.fg_s1}
-ramp-coreload-1-font = 5
-ramp-coreload-2 = ▃
-ramp-coreload-2-foreground = ${colors.fg_s1}
-ramp-coreload-2-font = 5
-ramp-coreload-3 = ▄
-ramp-coreload-3-foreground = ${colors.fg_s2}
-ramp-coreload-3-font = 5
-ramp-coreload-4 = ▅
-ramp-coreload-4-foreground = ${colors.fg_s2}
-ramp-coreload-4-font = 5
-ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = ${colors.fg_s2}
-ramp-coreload-5-font = 5
-ramp-coreload-6 = ▇
-ramp-coreload-6-foreground = ${colors.fg_s3}
-ramp-coreload-6-font = 5
-ramp-coreload-7 = █
-ramp-coreload-7-foreground = ${colors.fg_s3}
-ramp-coreload-7-font = 5
 
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = "RAM "
-label = %percentage_used%%
+label =  %percentage_used%%
 
 
 
@@ -269,8 +218,27 @@ interval = 25
 
 mount-0 = /
 mount-1= /home
-mount-2= /home/grzechu/GamesHDD
 
 label-mounted = %{F#6688aa}%mountpoint%%{F-}: %free%
 
 
+[module/gpuTemp]
+type = custom/script
+exec = nvidia-smi --query-gpu=temperature.gpu --format=nounits,csv,noheader
+label = %{O-5}/%output%
+interval = 3
+
+
+[module/gpuUsage]
+type = custom/script
+exec = nvidia-smi --query-gpu=utilization.gpu --format=nounits,csv,noheader
+label =  %output%
+interval = 3
+
+
+
+[module/ds4]
+type = custom/script
+exec = ~/.config/polybar/ds4_check.sh
+label =  %output% %
+interval = 3
